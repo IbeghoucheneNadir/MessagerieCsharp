@@ -37,6 +37,12 @@ namespace Wpf1
             this.pubkey = pubkey;
         }
 
+        public Personne(String nickname)
+        {
+            messages = new ObservableCollection<Message>();
+            this.nickname = nickname;
+
+        }
         private ObservableCollection<Message> messages;
         [Ignore]
         public ObservableCollection<Message> Messages

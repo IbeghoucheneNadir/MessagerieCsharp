@@ -44,15 +44,22 @@ namespace Wpf1
             contacts.Add(p2);
             contacts.Add(p3);
             addMessageCommand = new ClassCommandParameters(addMessage);
+            addPersonneCommand = new ClassCommandParameters(addPersonne);
             removePersonneCommand = new ClassCommandParameters(removePersonne);
+
+
         }
 
         //FONCTIONS
 
 
-       public  ClassCommandParameters addMessageCommand { get; set; }
-      
-       void addMessage(Object personne)
+        public  ClassCommandParameters addMessageCommand { get; set; }
+        public ClassCommandParameters addPersonneCommand { get; set; }
+        public ClassCommandParameters removePersonneCommand { get; set; }
+
+
+
+        void addMessage(Object personne)
        {
             Window1 w = new Window1();
             if (personne == null) return;
@@ -62,7 +69,6 @@ namespace Wpf1
             p.Messages.Add(m);
        }
 
-        public ClassCommandParameters removePersonneCommand { get; set; }
 
         void removePersonne(Object personne)
         {
@@ -74,11 +80,12 @@ namespace Wpf1
 
         void addPersonne(Object personne)
         {
-            //this.PropertyChanged.
             if (personne == null) return;
-            Personne p = (Personne)personne;
+            Personne p = new Personne((string)personne);
             contacts.Add(p);
             SingletonDB.Instance.addPersonne(SingletonDB.GetDBConnection(), p);
+            Console.WriteLine("Contact added successfully");
+            
         }
         //ACCESSEURS
 
