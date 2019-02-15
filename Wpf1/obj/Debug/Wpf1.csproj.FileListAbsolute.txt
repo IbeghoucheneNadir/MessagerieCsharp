@@ -14,3 +14,17 @@ C:\Users\mbdse\source\repos\Wpf1\Wpf1\obj\Debug\Wpf1.csproj.GenerateResource.cac
 C:\Users\mbdse\source\repos\Wpf1\Wpf1\obj\Debug\Wpf1.csproj.CoreCompileInputs.cache
 C:\Users\mbdse\source\repos\Wpf1\Wpf1\obj\Debug\Wpf1.exe
 C:\Users\mbdse\source\repos\Wpf1\Wpf1\obj\Debug\Wpf1.pdb
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\obj\Debug\Wpf1.csprojAssemblyReference.cache
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\obj\Debug\Wpf1_Content.g.cs
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\x86\e_sqlite3.dll
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\x64\e_sqlite3.dll
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\SQLite-net.dll
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\System.Data.SQLite.dll
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\SQLite-net.xml
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\System.Data.SQLite.xml
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\mbdse\source\repos\Wpf1\Wpf1\obj\Debug\Wpf1.csproj.CopyComplete

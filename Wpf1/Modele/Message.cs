@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,21 @@ using System.Threading.Tasks;
 
 namespace Wpf1
 {
+
+    [Table("Message")]
     public class Message
     {
-        public int id;
-        public String message;
-        public String from;
-        public String to;
-        public DateTime dateMessage;
+        [Column("ID")]
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+        [Column("TEXTMESSAGE")]
+        public String message { get; set; }
+        [Column("FROM")]
+        public String from { get; set; }
+        [Column("TO")]
+        public String to { get; set; }
+        [Column("DATEMESSAGE")]
+        public DateTime dateMessage { get; set; }
 
         public Message(int v1, string v2, string v3, string v4, string v5)
         {
