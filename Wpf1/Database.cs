@@ -9,36 +9,36 @@ using SQLiteConnection = SQLite.SQLiteConnection;
 
 namespace Wpf1
 {
-    public class Database
-    {
-        
-        // Instanciation de notre connexion
-        //public SQLiteConnection connection;
-
-        // Utilisation de l'API en mode synchrone
-        public void Test(SQLiteConnection connection)
+        public sealed class SingletonDB
         {
-            connection.CreateTable<Personne>();
-            Personne p1 = new Personne(5,"zekbfzef", "Pierre" ,DateTime.Now,"Date");
-            //connection.Insert(p1);
-            connection.Delete(p1);
+            static string dbPath;
+
+            static readonly SingletonDB instance = new SingletonDB();
+            static SQLiteConnection con;
 
 
-            //select ex1:
-            // List<Personne> personnes = conn.Table<Personne>().Where(x => x.LastName == "TOTO").ToList();
-            //select ex2:
-            //IEnumerable<Personne> personnes = conn.Query<Personne>("SELECT * FROM People WHERE ...", r1.Id)
+            private SingletonDB()
+            {
+                dbPath = "C:/Users/mbdse/source/repos/Projet_Csh/Projet_Csh/Test.db3";
+                con = new SQLiteConnection(dbPath);
+
+                // Utilisation de l'API en mode synchrone
+                con.CreateTable<Personne>();
+                con.CreateTable<Message>();
+            }
+
+            public static SingletonDB Instance
+            {
+                get
+                {
+                    return instance;
+                }
+            }
+
+            public static SQLiteConnection GetDBConnection()
+            {
+                return con;
+            }
         }
-
-        public void removePersonne(SQLiteConnection connection, Personne p)
-        {
-            connection.Delete(p);
-
-            //select ex1:
-            // List<Personne> personnes = conn.Table<Personne>().Where(x => x.LastName == "TOTO").ToList();
-            //select ex2:
-            //IEnumerable<Personne> personnes = conn.Query<Personne>("SELECT * FROM People WHERE ...", r1.Id)
-        }
-
     }
 }

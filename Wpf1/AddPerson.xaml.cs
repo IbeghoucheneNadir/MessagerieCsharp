@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Wpf1
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour AddPerson.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddPerson : UserControl
     {
-        public MainWindow()
+        public AddPerson()
         {
             InitializeComponent();
         }
-        
     }
 }
