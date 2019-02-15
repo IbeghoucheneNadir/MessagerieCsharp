@@ -15,9 +15,7 @@ namespace Wpf1
     {
 
         //DECLARATIONS DES VARIABLES
-        string dbPath = "C:/Users/mbdse/source/repos/Wpf1/packagesMyDatabase.db3";
-        SQLiteConnection connection;
-        Database dabatase;
+        
         private ObservableCollection<Personne> contacts;
         private ObservableCollection<Message> messages;
         public event PropertyChangedEventHandler PropertyChanged;
@@ -28,8 +26,6 @@ namespace Wpf1
         //CONSTRUCTEUR(S)
         public VM()
         {
-            connection = new SQLiteConnection(dbPath);
-            dabatase = new Database();
             Personne p1 = new Personne(1, "alex", "lastname", DateTime.Now, "123");
             Personne p2 = new Personne(2, "fred", "fred", DateTime.Now, "555");
             Personne p3 = new Personne(3, "roman", "gari", DateTime.Now, "456");
@@ -58,11 +54,12 @@ namespace Wpf1
       
        void addMessage(Object personne)
        {
+            Window1 w = new Window1();
             if (personne == null) return;
             Personne p = (Personne)personne;
             Message m = new Message(4, Message, "me", p.nickname, DateTime.Now);
+            w.MessageBox.Clear();
             p.Messages.Add(m);
-            dabatase.Test(connection);
        }
 
         public ClassCommandParameters removePersonneCommand { get; set; }
@@ -72,9 +69,17 @@ namespace Wpf1
             if (personne == null) return;
             Personne p = (Personne)personne;
             contacts.Remove(p);
-           // dabatase.removePersonne(connection,p);
+            SingletonDB.Instance.removePersonne(SingletonDB.GetDBConnection(), p);
         }
 
+        void addPersonne(Object personne)
+        {
+            //this.PropertyChanged.
+            if (personne == null) return;
+            Personne p = (Personne)personne;
+            contacts.Add(p);
+            SingletonDB.Instance.addPersonne(SingletonDB.GetDBConnection(), p);
+        }
         //ACCESSEURS
 
 

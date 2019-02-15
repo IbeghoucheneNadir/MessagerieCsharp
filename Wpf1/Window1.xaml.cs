@@ -27,7 +27,11 @@ namespace Wpf1
             InitializeComponent();
             
         }
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddPerson addContact = new AddPerson();
+            page.Children.Add(addContact);
+        }
 
     }
 }

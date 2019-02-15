@@ -39,6 +39,16 @@ namespace Wpf1
             {
                 return con;
             }
+
+        public void removePersonne(SQLiteConnection connection, Personne p)
+        {
+            connection.Delete(p);
+        }
+
+        public void addPersonne(SQLiteConnection connection, Personne p)
+        {
+            connection.Insert(p);
         }
     }
+    
 }
