@@ -3,22 +3,28 @@ using System.IO;
 using System.Reflection;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using SQLite;
 
 namespace Wpf1
 {
-
+    [Table("Personne")]
     public class Personne : INotifyPropertyChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
-        [Sauvegarde()]
+        //    [Sauvegarde()]
+
+        [Column("ID")]
+        [PrimaryKey, AutoIncrement]
         public int id { get; set; }
-        [Sauvegarde()]
+        //    [Sauvegarde()]
+        [Column("Nickname")]
         public string nickname { get; set; }
-
+        [Column("Lastname")]
         public string lastname { get; set; }
-
+        [Column("LastSeen")]
         public DateTime lastSeen { get; set; }
+        [Column("Pubkey")]
         public string pubkey { get; set; }
 
         public Personne(int id, String nickname, String lastname, DateTime lastSeen, String pubkey)
@@ -32,6 +38,7 @@ namespace Wpf1
         }
 
         private ObservableCollection<Message> messages;
+        [Ignore]
         public ObservableCollection<Message> Messages
         {
             get { return messages; }
