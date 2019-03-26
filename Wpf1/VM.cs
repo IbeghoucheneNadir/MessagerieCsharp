@@ -17,15 +17,15 @@ namespace Wpf1
         //DECLARATIONS DES VARIABLES
         
         private ObservableCollection<Personne> contacts;
-        private ObservableCollection<Message> messages;
+        //private ObservableCollection<Message> messages;
         public event PropertyChangedEventHandler PropertyChanged;
         private List<Message> msg = new List<Message>();
-        ClassCommandParameters PersonSelectionChanged;
+        //ClassCommandParameters PersonSelectionChanged;
 
         public String Message { get; set; }
         //CONSTRUCTEUR(S)
         public VM()
-        {
+        {/*
             Personne p1 = new Personne(1, "alex", "lastname", DateTime.Now, "123");
             Personne p2 = new Personne(2, "fred", "fred", DateTime.Now, "555");
             Personne p3 = new Personne(3, "roman", "gari", DateTime.Now, "456");
@@ -38,17 +38,14 @@ namespace Wpf1
             p1.Messages.Add(m2);
             p1.Messages.Add(m3);
             p2.Messages.Add(m1);
+            */
+            contacts = SingletonDB.Instance.getPersonnes(SingletonDB.GetDBConnection());
 
-            contacts = new ObservableCollection<Personne>();
-            contacts.Add(p1);
-            contacts.Add(p2);
-            contacts.Add(p3);
             addMessageCommand = new ClassCommandParameters(addMessage);
             addPersonneCommand = new ClassCommandParameters(addPersonne);
             removePersonneCommand = new ClassCommandParameters(removePersonne);
-
-
-        }
+            
+            }
 
         //FONCTIONS
 
@@ -59,22 +56,22 @@ namespace Wpf1
 
 
 
-        void addMessage(Object personne)
+        /*void addMessage(Object personne)
        {
             Window1 w = new Window1();
+            
             if (personne == null) return;
             Personne p = (Personne)personne;
             Message m = new Message(4, Message, "me", p.nickname, DateTime.Now);
             w.MessageBox.Clear();
             p.Messages.Add(m);
-       }
+       }*/
 
 
         void removePersonne(Object personne)
         {
             if (personne == null) return;
             Personne p = (Personne)personne;
-            contacts.Remove(p);
             SingletonDB.Instance.removePersonne(SingletonDB.GetDBConnection(), p);
         }
 
@@ -82,11 +79,21 @@ namespace Wpf1
         {
             if (personne == null) return;
             Personne p = new Personne((string)personne);
-            contacts.Add(p);
             SingletonDB.Instance.addPersonne(SingletonDB.GetDBConnection(), p);
-            Console.WriteLine("Contact added successfully");
-            
+
         }
+        void addMessage(Object message)
+        {
+            if (message == null) return;
+
+            Message m = new Message((string)message);
+            SingletonDB.Instance.addMessage(SingletonDB.GetDBConnection(), m);
+                              }
+        void getPersonnes()
+        {
+            SingletonDB.Instance.getPersonnes(SingletonDB.GetDBConnection());
+        }
+
         //ACCESSEURS
 
 

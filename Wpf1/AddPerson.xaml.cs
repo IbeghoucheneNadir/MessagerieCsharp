@@ -24,5 +24,13 @@ namespace Wpf1
         {
             InitializeComponent();
         }
+
+        private void add(object sender, RoutedEventArgs e)
+        {
+            nom.Clear();
+            prenom.Clear();
+            bio.Clear();
+            
+        }
     }
 }

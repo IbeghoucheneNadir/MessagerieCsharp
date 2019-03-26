@@ -23,8 +23,10 @@ namespace Wpf1
         [Column("DATEMESSAGE")]
         public DateTime dateMessage { get; set; }
 
-        public Message(int v1, string v2, string v3, string v4, string v5)
+        public Message(string message)
         {
+            this.message = message;
+
         }
 
         public Message(int idMessage, String message, String from, String to, DateTime dateMessage)

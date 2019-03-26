@@ -36,8 +36,9 @@ namespace Wpf1
             this.lastSeen = lastSeen;
             this.pubkey = pubkey;
         }
-
-        public Personne(String nickname)
+        public Personne()
+        { }
+            public Personne(String nickname)
         {
             messages = new ObservableCollection<Message>();
             this.nickname = nickname;

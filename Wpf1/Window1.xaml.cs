@@ -27,11 +27,29 @@ namespace Wpf1
             InitializeComponent();
             
         }
+        protected virtual void ListP_PreviewMouseLeftButtonUp(object sender, RoutedEventArgs e)
+        {
+            if (page.Children.GetType().Equals("AddPerson"))
+                page.Children.Clear();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddPerson addContact = new AddPerson();
             page.Children.Add(addContact);
+    
+            
+            //page.Children.Clear();
         }
 
+        private void Send (object sender, RoutedEventArgs e)
+        {
+            MessageBox.Clear();
+        }
+
+        private void ListP_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
