@@ -16,7 +16,7 @@ namespace Wpf1
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            var app = new Window1();
+            var app = new Main();
             var context = new VM();
             app.DataContext = context;
             app.Show();
