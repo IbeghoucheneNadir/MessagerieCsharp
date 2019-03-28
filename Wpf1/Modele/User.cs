@@ -38,6 +38,11 @@ namespace Wpf1
             this.name = nickname;
 
         }
+
+        public User(object user)
+        {
+        }
+
         private ObservableCollection<Message> messages;
         [Ignore]
         public ObservableCollection<Message> Messages

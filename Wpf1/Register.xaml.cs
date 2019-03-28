@@ -27,12 +27,12 @@ namespace Wpf1
 
         private void add(object sender, RoutedEventArgs e)
         {
-            this.RemoveVisualChild(new Register());
-            this.AddChild(new Window1());
+           // this.RemoveVisualChild(new Register());
+           // this.RemoveLogicalChild(Wpf1.Register);
+           //     AddChild(new Window1());
             nom.Clear();
             password.Clear();
             password1.Clear();
-            
         }
     }
 }

@@ -41,18 +41,21 @@ namespace Wpf1
             */
             contacts = SingletonDB.Instance.getPersonnes(SingletonDB.GetDBConnection());
 
-            addMessageCommand = new ClassCommandParameters(addMessage);
-            addPersonneCommand = new ClassCommandParameters(addPersonne);
-            removePersonneCommand = new ClassCommandParameters(removePersonne);
+            AddMessageCommand = new ClassCommandParameters(addMessage);
+            AddUserCommand = new ClassCommandParameters(addUser);
+            AddPersonneCommand = new ClassCommandParameters(addPersonne);
+            RemovePersonneCommand = new ClassCommandParameters(removePersonne);
             
             }
 
         //FONCTIONS
 
 
-        public  ClassCommandParameters addMessageCommand { get; set; }
-        public ClassCommandParameters addPersonneCommand { get; set; }
-        public ClassCommandParameters removePersonneCommand { get; set; }
+        public  ClassCommandParameters AddMessageCommand { get; set; }
+        public ClassCommandParameters AddUserCommand { get; set; }
+
+        public ClassCommandParameters AddPersonneCommand { get; set; }
+        public ClassCommandParameters RemovePersonneCommand { get; set; }
 
 
 
@@ -80,6 +83,13 @@ namespace Wpf1
             if (personne == null) return;
             Personne p = new Personne((string)personne);
             SingletonDB.Instance.addPersonne(SingletonDB.GetDBConnection(), p);
+
+        }
+        void addUser(Object user)
+        {
+            if (user == null) return;
+            User u = new User((string)user);
+            SingletonDB.Instance.addUser(SingletonDB.GetDBConnection(), u);
 
         }
         void addMessage(Object message)

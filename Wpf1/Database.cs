@@ -26,6 +26,7 @@ namespace Wpf1
 
                 // Utilisation de l'API en mode synchrone
                 con.CreateTable<Personne>();
+                con.CreateTable<User>();
                 con.CreateTable<Message>();
                 
             }
@@ -57,6 +58,13 @@ namespace Wpf1
             this.getPersonnes(connection);
 
 
+        }
+        public void addUser(SQLiteConnection connection, User u)
+        {
+
+            connection.Insert(u);
+            
+            
         }
         public void addMessage(SQLiteConnection connection, Message m)
         {
