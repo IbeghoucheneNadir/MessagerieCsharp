@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Wpf1
 {
     /// <summary>
-    /// Logique d'interaction pour Register.xaml
+    /// Logique d'interaction pour Connexion.xaml
     /// </summary>
-    public partial class Register : Page
+    public partial class Connexion : Page
     {
-        public Register()
+        public Connexion()
         {
             InitializeComponent();
         }
@@ -30,11 +30,9 @@ namespace Wpf1
             // this.RemoveVisualChild(new Register());
             // this.RemoveLogicalChild(Wpf1.Register);
             // AddChild(new Window1());
-            Window1 main = new Window1();
-            NavigationService.Navigate(main);
+            NavigationService.Navigate(new Uri("Register.xaml"));
             nom.Clear();
             password.Clear();
-            password1.Clear();
         }
     }
 }

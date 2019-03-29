@@ -19,7 +19,7 @@ namespace Wpf1
     /// <summary>
     /// Logique d'interaction pour Window1.xaml
     /// </summary>
-    public partial class Window1 : UserControl
+    public partial class Window1 : Page
     {
 
         public Window1()

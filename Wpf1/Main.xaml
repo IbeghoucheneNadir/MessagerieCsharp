@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf1"
         mc:Ignorable="d"
-        Title="Messagerie" Height="300" Width="500">
-    <local:Register Loaded="Register_Loaded" />
+        Title="Messagerie" Height="500" Width="500">
+    <local:Connexion/>
 
 </Window>
