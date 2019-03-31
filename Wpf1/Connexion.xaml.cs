@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,9 +31,24 @@ namespace Wpf1
             // this.RemoveVisualChild(new Register());
             // this.RemoveLogicalChild(Wpf1.Register);
             // AddChild(new Window1());
-            NavigationService.Navigate(new Uri("Register.xaml"));
+            // NavigationService.Navigate(new Uri("Register.xaml"));
+
             nom.Clear();
             password.Clear();
+        }
+
+
+        private void HandleLinkClick(object sender, RoutedEventArgs e)
+        {
+
+            Hyperlink hl = (Hyperlink)sender;
+
+            string navigateUri = "Register.xaml";
+
+           // Process.Start(new ProcessStartInfo(navigateUri));
+
+            e.Handled = true;
+
         }
     }
 }
