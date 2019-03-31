@@ -22,11 +22,11 @@ namespace Wpf1
         public Main()
         {
             InitializeComponent();
+            main.Content = new Register();
+            main2.Content = new Connexion();
         }
 
-        private void Register_Loaded(object sender, RoutedEventArgs e)
-        {
 
-        }
+
     }
 }

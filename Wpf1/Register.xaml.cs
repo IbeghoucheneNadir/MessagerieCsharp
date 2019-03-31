@@ -27,11 +27,7 @@ namespace Wpf1
 
         private void add(object sender, RoutedEventArgs e)
         {
-            // this.RemoveVisualChild(new Register());
-            // this.RemoveLogicalChild(Wpf1.Register);
-            // AddChild(new Window1());
-            Window1 main = new Window1();
-            NavigationService.Navigate(main);
+
             nom.Clear();
             password.Clear();
             password1.Clear();
