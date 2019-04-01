@@ -16,21 +16,14 @@ using System.Windows.Shapes;
 namespace Wpf1
 {
     /// <summary>
-    /// Logique d'interaction pour AddPerson.xaml
+    /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class AddPerson : UserControl
+    public partial class MainWindow : Window
     {
-        public AddPerson()
+        public MainWindow()
         {
             InitializeComponent();
         }
-
-        private void add(object sender, RoutedEventArgs e)
-        {
-            nom.Clear();
-            prenom.Clear();
-            bio.Clear();
-            
-        }
+        
     }
 }

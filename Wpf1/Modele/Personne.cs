@@ -27,6 +27,10 @@ namespace Wpf1
         [Column("Pubkey")]
         public string pubkey { get; set; }
 
+        public Personne()
+        {
+
+        }
         public Personne(int id, String nickname, String lastname, DateTime lastSeen, String pubkey)
         {
             messages = new ObservableCollection<Message>();
@@ -36,14 +40,7 @@ namespace Wpf1
             this.lastSeen = lastSeen;
             this.pubkey = pubkey;
         }
-        public Personne()
-        { }
-            public Personne(String nickname)
-        {
-            messages = new ObservableCollection<Message>();
-            this.nickname = nickname;
 
-        }
         private ObservableCollection<Message> messages;
         [Ignore]
         public ObservableCollection<Message> Messages
