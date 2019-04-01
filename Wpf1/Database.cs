@@ -21,7 +21,7 @@ namespace Wpf1
 
             private SingletonDB()
             {
-                dbPath = "D:/MessagerieCsharp/packagesMyDatabase.db3";
+                dbPath = "C:/Users/mbdse/source/repos/MessagerieCsharp/packagesMyDatabase.db3";
                 con = new SQLiteConnection(dbPath);
 
                 // Utilisation de l'API en mode synchrone

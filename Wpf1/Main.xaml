@@ -5,14 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf1"
         mc:Ignorable="d"
-        Title="Messagerie" Height="600" Width="1000">
-    <Grid>
-        <Border  CornerRadius="8" BorderThickness="5" BorderBrush="Beige">
-            <Frame x:Name="main"  Width="480" HorizontalAlignment="Left" Background="DarkGray"/>
-        </Border>
-        <Border   CornerRadius="8" BorderThickness="5" BorderBrush="Beige">
-            <Frame x:Name="main2" Width="480" HorizontalAlignment="Right" Background="DarkGray"/>
-        </Border>
+        Title="Messagerie" Height="500" Width="500">
+    <local:Connexion/>
 
-    </Grid>
 </Window>
